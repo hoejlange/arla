@@ -1,5 +1,6 @@
 "use strict";
-
+getFarmers();
+function getFarmers() {
 let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
 let sheetNumber = 1;
 let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
@@ -13,6 +14,8 @@ fetch(sheetUrl)
     console.log(json);
     appendChart(json.feed.entry);
   });
+}
+
 
 function appendChart(data) {
   console.log(data);
@@ -44,7 +47,7 @@ function appendChart(data) {
   }
 
   // generate chart
-  let chart = document.getElementById('chart');
+  let chart = document.getElementById('chart-farmer');
   let myChart = new Chart(chart, {
     type: 'line',
     data: {
