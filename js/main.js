@@ -1,6 +1,6 @@
 "use strict";
 
-let sheetId = "1iS2cJk1CoGY1bqN8KgH_oGMxBuGK3RIPJ32rgon4ECg";
+let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
 let sheetNumber = 1;
 let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
 console.log(sheetUrl);
@@ -10,6 +10,7 @@ fetch(sheetUrl)
     return response.json();
   })
   .then(function(json) {
+    console.log(json);
     appendChart(json.feed.entry);
   });
 
@@ -17,42 +18,92 @@ function appendChart(data) {
   console.log(data);
 
   // prepare data
-  let cows = [];
   let years = [];
+  let henrik = [];
+  let lars = [];
+  let hans = [];
+  let bodil = [];
+  let jens = [];
+  let allan = [];
+  let lisbeth = [];
+  let ryan = [];
+  let finn = [];
 
-  for (let object of data) {
-    cows.push(object.gsx$cows.$t);
-    years.push(object.gsx$year.$t);
+
+  for (let year of data) {
+    years.push(`${year['gsx$year']['$t']}`);
+    henrik.push(year['gsx$henrik']['$t'].replace(",", "."));
+    lars.push(year['gsx$lars']['$t'].replace(",", "."));
+    hans.push(year['gsx$hans']['$t'].replace(",", "."));
+    bodil.push(year['gsx$bodil']['$t'].replace(",", "."));
+    jens.push(year['gsx$jens']['$t'].replace(",", "."));
+    allan.push(year['gsx$allan']['$t'].replace(",", "."));
+    lisbeth.push(year['gsx$lisbeth']['$t'].replace(",", "."));
+    ryan.push(year['gsx$ryan']['$t'].replace(",", "."));
+    finn.push(year['gsx$finn']['$t'].replace(",", "."));
   }
-
-  console.log(cows);
-  console.log(years);
 
   // generate chart
   let chart = document.getElementById('chart');
-  let myDoughnutChart = new Chart(chart, {
+  let myChart = new Chart(chart, {
     type: 'line',
     data: {
       datasets: [{
-        data: cows,
-        label: 'Number of Cows',
-        fill: false,
-        borderColor: "#e755ba",
-        borderDash: [5, 5],
-        backgroundColor: "#e755ba",
-        pointBackgroundColor: "#55bae7",
-        pointBorderColor: "#55bae7",
-        pointHoverBackgroundColor: "#55bae7",
-        pointHoverBorderColor: "#55bae7",
-      }],
+        label: 'Henrik',
+        data: henrik,
+      borderColor: "red",
+      fill: false
+
+      }, {
+        label: 'Lars',
+        data: lars,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Hans',
+        data: hans,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Bodil',
+        data: bodil,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Jens',
+        data: jens,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Allan',
+        data: allan,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Lisbeth',
+        data: lisbeth,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Ryan',
+        data: ryan,
+        borderColor: "grey",
+        fill: false
+      }, {
+        label: 'Finn',
+        data: finn,
+        borderColor: "grey",
+        fill: false
+      }
+
+    ],
       labels: years
     },
     options: {
       scales: {
         yAxes: [{
           ticks: {
-            min: 45,
-            max: 55
+            beginAtZero: true
           }
         }]
       }
