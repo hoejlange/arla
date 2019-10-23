@@ -113,3 +113,40 @@ function appendChart(data) {
     }
   });
 }
+
+
+// hide all charts
+function hideAllCharts() {
+  let charts = document.querySelectorAll(".chartWrapper");
+  for (let chart of charts) {
+    chart.style.display = "none";
+  }
+}
+
+// show page or tab
+function showChart(chartId) {
+  hideAllCharts();
+  document.querySelector(`#${chartId}`).style.display = "block";
+  setActiveButton(chartId);
+}
+
+// sets active tabbar/ menu item
+function setActiveButton(chartId) {
+  let buttons = document.querySelectorAll(".toggleButton");
+  for (let button of buttons) {
+    console.log(button.id)
+    if (`${chartId}-button` === button.id) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  }
+}
+
+// set default page
+function setDefaultChart() {
+  let chart = "chart-farmer-wrapper";
+  showChart(chart);
+}
+
+setDefaultChart();

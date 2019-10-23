@@ -16,8 +16,17 @@
   <header>
     <h1>Mine resultater</h1>
   </header>
-  <canvas id="chart-farmer"></canvas>
-  <canvas id="chart-region"></canvas>
+
+  <div class=buttons-container>
+    <button class="toggleButton" id="chart-farmer-wrapper-button" onclick="showChart('chart-farmer-wrapper')"></button>
+    <button class="toggleButton" id="chart-region-wrapper-button" onclick="showChart('chart-region-wrapper')"></button>
+  </div>
+  <div class="chartWrapper" id="chart-farmer-wrapper">
+    <canvas id="chart-farmer"></canvas>
+  </div>
+  <div class="chartWrapper" id="chart-region-wrapper">
+    <canvas id="chart-region"></canvas>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   <!-- main js file -->

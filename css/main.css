@@ -19,3 +19,15 @@ h1 {
   letter-spacing: 3px;
   margin: 1em 0;
 }
+
+.toggleButton {
+  background: white;
+  border-color: green;
+  width: 40px;
+  height: 20px;
+}
+
+.active {
+  background: green;
+
+}
