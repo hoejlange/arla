@@ -23,7 +23,7 @@ function appendChart(data) {
 
   // prepare data
   let years = [];
-  let henrik = [];
+  let karl = [];
   let lars = [];
   let hans = [];
   let bodil = [];
@@ -36,7 +36,7 @@ function appendChart(data) {
 
   for (let year of data) {
     years.push(`${year['gsx$year']['$t']}`);
-    henrik.push(year['gsx$henrik']['$t'].replace(",", "."));
+    karl.push(year['gsx$karl']['$t'].replace(",", "."));
     lars.push(year['gsx$lars']['$t'].replace(",", "."));
     hans.push(year['gsx$hans']['$t'].replace(",", "."));
     bodil.push(year['gsx$bodil']['$t'].replace(",", "."));
@@ -53,8 +53,8 @@ function appendChart(data) {
     type: 'line',
     data: {
       datasets: [{
-          label: 'Henrik',
-          data: henrik,
+          label: 'Karl',
+          data: karl,
           borderColor: "red",
           fill: false
 
