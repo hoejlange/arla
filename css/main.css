@@ -13,6 +13,12 @@ html {
   font-weight: 200;
 }
 
+body {
+  background-image: url(../img/laptop-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1 {
   font-size: 2em;
   font-weight: 300;
@@ -29,5 +35,31 @@ h1 {
 
 .active {
   background: green;
+}
 
+.buttons-container {
+  width: 75%;
+  position: absolute;
+  right: 5%;
+  margin-top: 5%;
+}
+
+.chartWrapper {
+  width: 75%;
+  position: absolute;
+  right: 5%;
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-image: url(../img/ipad-bg.png);
+  }
+}
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(../img/mobile-bg.png);
+  }
 }

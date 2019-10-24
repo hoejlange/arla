@@ -1,19 +1,20 @@
 "use strict";
 getFarmers();
-function getFarmers() {
-let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
-let sheetNumber = 1;
-let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
-console.log(sheetUrl);
 
-fetch(sheetUrl)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    console.log(json);
-    appendChart(json.feed.entry);
-  });
+function getFarmers() {
+  let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
+  let sheetNumber = 1;
+  let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
+  console.log(sheetUrl);
+
+  fetch(sheetUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      console.log(json);
+      appendChart(json.feed.entry);
+    });
 }
 
 
@@ -52,54 +53,64 @@ function appendChart(data) {
     type: 'line',
     data: {
       datasets: [{
-        label: 'Henrik',
-        data: henrik,
-      borderColor: "red",
-      fill: false
+          label: 'Henrik',
+          data: henrik,
+          borderColor: "red",
+          fill: false
 
-      }, {
-        label: 'Lars',
-        data: lars,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Hans',
-        data: hans,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Bodil',
-        data: bodil,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Jens',
-        data: jens,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Allan',
-        data: allan,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Lisbeth',
-        data: lisbeth,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Ryan',
-        data: ryan,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Finn',
-        data: finn,
-        borderColor: "grey",
-        fill: false
-      }
+        },
+        {
+          label: 'Lars',
+          data: lars,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Hans',
+          data: hans,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Bodil',
+          data: bodil,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Jens',
+          data: jens,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Allan',
+          data: allan,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Lisbeth',
+          data: lisbeth,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Ryan',
+          data: ryan,
+          borderColor: "grey",
+          fill: false
+        },
+        {
+          label: 'Finn',
+          data: finn,
+          borderColor: "pink",
+          fill: false,
 
-    ],
+
+        }
+
+      ],
       labels: years
     },
     options: {
@@ -109,10 +120,50 @@ function appendChart(data) {
             beginAtZero: true
           }
         }]
+      },
+      responsive: true,
+      legend: {
+        position: 'bottom',
+        labels: {
+          fontColor: "black",
+          boxWidth: 20,
+          padding: 20
+        }
       }
     }
+
   });
 }
+
+/*
+let defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
+let newLegendClickHandler = function(e, legendItem) {
+  let index = legendItem.datasetIndex;
+
+  if (index > 0) {
+    // Do the original logic
+    defaultLegendClickHandler(e, legendItem);
+  } else {
+    let ci = this.chart;
+    [
+      ci.getDatasetMeta(0),
+      ci.getDatasetMeta(1)
+    ].forEach(function(meta) {
+      meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
+    });
+    ci.update();
+  }
+};
+
+let chart = new Chart(ctx, {
+  type: 'line',
+  data: data,
+  options: {
+    legend: {
+      onClick: newLegendClickHandler
+    }
+  }
+}); */
 
 
 // hide all charts
