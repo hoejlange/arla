@@ -1,20 +1,22 @@
 "use strict";
 getRegions();
-function getRegions() {
-let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
-let sheetNumber = 2;
-let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
-console.log(sheetUrl);
 
-fetch(sheetUrl)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    console.log(json);
-    appendChartRegion(json.feed.entry);
-  });
+function getRegions() {
+  let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
+  let sheetNumber = 2;
+  let sheetUrl = "https://spreadsheets.google.com/feeds/list/" + sheetId + "/" + sheetNumber + "/public/full?alt=json";
+  console.log(sheetUrl);
+
+  fetch(sheetUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      console.log(json);
+      appendChartRegion(json.feed.entry);
+    });
 }
+
 function appendChartRegion(data) {
   console.log(data);
 
@@ -41,29 +43,29 @@ function appendChartRegion(data) {
     type: 'line',
     data: {
       datasets: [{
-        label: 'Region Nord',
-        data: northAverage,
-      borderColor: "grey",
-      fill: false
+          label: 'Region Nord',
+          data: northAverage,
+          borderColor: "#4bb131",
+          fill: false
 
-      }, {
-        label: 'Region Syd',
-        data: southAverage,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Region Sjælland',
-        data: zealandAverage,
-        borderColor: "grey",
-        fill: false
-      }, {
-        label: 'Hele Danmark',
-        data: dkAverage,
-        borderColor: "grey",
-        fill: false
-      }
+        }, {
+          label: 'Region Syd',
+          data: southAverage,
+          borderColor: "#0b34aa",
+          fill: false
+        }, {
+          label: 'Region Sjælland',
+          data: zealandAverage,
+          borderColor: "#ffe90a",
+          fill: false
+        }, {
+          label: 'Hele Danmark',
+          data: dkAverage,
+          borderColor: "#f7353c",
+          fill: false
+        }
 
-    ],
+      ],
       labels: years
     },
     options: {
@@ -73,6 +75,14 @@ function appendChartRegion(data) {
             beginAtZero: true
           }
         }]
+      },
+      legend: {
+        position: 'bottom',
+        labels: {
+          fontColor: "black",
+          boxWidth: 20,
+          padding: 20
+        }
       }
     }
   });

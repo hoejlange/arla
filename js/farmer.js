@@ -55,56 +55,56 @@ function appendChart(data) {
       datasets: [{
           label: 'Karl',
           data: karl,
-          borderColor: "red",
+          borderColor: "#4bb131",
           fill: false
 
         },
         {
           label: 'Lars',
           data: lars,
-          borderColor: "grey",
+          borderColor: "#ffcc32",
           fill: false
         },
         {
           label: 'Hans',
           data: hans,
-          borderColor: "grey",
+          borderColor: "#006c3a",
           fill: false
         },
         {
           label: 'Bodil',
           data: bodil,
-          borderColor: "grey",
+          borderColor: "#0b43aa",
           fill: false
         },
         {
           label: 'Jens',
           data: jens,
-          borderColor: "grey",
+          borderColor: "#3cc4eb",
           fill: false
         },
         {
           label: 'Allan',
           data: allan,
-          borderColor: "grey",
+          borderColor: "#7d5d8a",
           fill: false
         },
         {
           label: 'Lisbeth',
           data: lisbeth,
-          borderColor: "grey",
+          borderColor: "#f8353c",
           fill: false
         },
         {
           label: 'Ryan',
           data: ryan,
-          borderColor: "grey",
+          borderColor: "#ff7e05",
           fill: false
         },
         {
           label: 'Finn',
           data: finn,
-          borderColor: "pink",
+          borderColor: "#d7e100",
           fill: false,
 
 

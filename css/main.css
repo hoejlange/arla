@@ -13,10 +13,21 @@ html {
   font-weight: 200;
 }
 
+header {
+  background-image: url(../img/laptop-header.png);
+  height: 12%;
+  width: 100%;
+  position: fixed;
+  background-repeat: no-repeat;
+  z-index: 100;
+  background-size: 100%;
+}
+
 body {
   background-image: url(../img/laptop-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -41,14 +52,19 @@ h1 {
   width: 75%;
   position: absolute;
   right: 5%;
-  margin-top: 5%;
+  padding-top: 10%;
 }
 
 .chartWrapper {
   width: 75%;
   position: absolute;
   right: 5%;
-  margin-top: 10%;
+  margin-top: 15%;
+}
+
+.compare-laptop {
+  width: 90%;
+  margin-top: 5%;
 }
 
 @media screen and (max-width: 992px) {
