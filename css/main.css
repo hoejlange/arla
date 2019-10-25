@@ -15,7 +15,7 @@ html {
 
 header {
   background-image: url(../img/laptop-header.png);
-  height: 12%;
+  height: 15%;
   width: 100%;
   position: fixed;
   background-repeat: no-repeat;
@@ -56,10 +56,46 @@ h1 {
 }
 
 .chartWrapper {
-  width: 75%;
+  width: 65%;
   position: absolute;
-  right: 5%;
+  right: 10%;
   margin-top: 15%;
+}
+
+.button-wrapper {
+  width: 100%;
+  background-image: url(../img/compare-laptop.png);
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button-flex-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  margin-right: 12%;
+}
+
+.button-flex-container>button {
+  width: 85px;
+  height: 33px;
+  border-radius: 25px;
+  background-color: #4bb131;
+  border-color: #4bb131;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#default-btn {
+  background-color: white;
+  border-color: white;
+  cursor: auto;
 }
 
 .compare-laptop {

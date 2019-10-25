@@ -1,6 +1,18 @@
 "use strict";
 getFarmers();
 
+let myChart;
+let years = [];
+let karl = [];
+let lars = [];
+let hans = [];
+let bodil = [];
+let jens = [];
+let allan = [];
+let lisbeth = [];
+let ryan = [];
+let finn = [];
+
 function getFarmers() {
   let sheetId = "1jaaOv83bjlkEr6GdZgrTSeNMoahuIVeymwr7RGNlNvA";
   let sheetNumber = 1;
@@ -20,20 +32,7 @@ function getFarmers() {
 
 function appendChart(data) {
   console.log(data);
-
   // prepare data
-  let years = [];
-  let karl = [];
-  let lars = [];
-  let hans = [];
-  let bodil = [];
-  let jens = [];
-  let allan = [];
-  let lisbeth = [];
-  let ryan = [];
-  let finn = [];
-
-
   for (let year of data) {
     years.push(`${year['gsx$year']['$t']}`);
     karl.push(year['gsx$karl']['$t'].replace(",", "."));
@@ -49,7 +48,7 @@ function appendChart(data) {
 
   // generate chart
   let chart = document.getElementById('chart-farmer');
-  let myChart = new Chart(chart, {
+  myChart = new Chart(chart, {
     type: 'line',
     data: {
       datasets: [{
@@ -58,57 +57,58 @@ function appendChart(data) {
           borderColor: "#4bb131",
           fill: false
 
-        },
-        {
-          label: 'Lars',
-          data: lars,
-          borderColor: "#ffcc32",
-          fill: false
-        },
-        {
-          label: 'Hans',
-          data: hans,
-          borderColor: "#006c3a",
-          fill: false
-        },
-        {
-          label: 'Bodil',
-          data: bodil,
-          borderColor: "#0b43aa",
-          fill: false
-        },
-        {
-          label: 'Jens',
-          data: jens,
-          borderColor: "#3cc4eb",
-          fill: false
-        },
-        {
-          label: 'Allan',
-          data: allan,
-          borderColor: "#7d5d8a",
-          fill: false
-        },
-        {
-          label: 'Lisbeth',
-          data: lisbeth,
-          borderColor: "#f8353c",
-          fill: false
-        },
-        {
-          label: 'Ryan',
-          data: ryan,
-          borderColor: "#ff7e05",
-          fill: false
-        },
-        {
-          label: 'Finn',
-          data: finn,
-          borderColor: "#d7e100",
-          fill: false,
-
-
         }
+        // ,
+        // {
+        //   label: 'Lars',
+        //   data: lars,
+        //   borderColor: "#ffcc32",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Hans',
+        //   data: hans,
+        //   borderColor: "#006c3a",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Bodil',
+        //   data: bodil,
+        //   borderColor: "#0b43aa",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Jens',
+        //   data: jens,
+        //   borderColor: "#3cc4eb",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Allan',
+        //   data: allan,
+        //   borderColor: "#7d5d8a",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Lisbeth',
+        //   data: lisbeth,
+        //   borderColor: "#f8353c",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Ryan',
+        //   data: ryan,
+        //   borderColor: "#ff7e05",
+        //   fill: false
+        // },
+        // {
+        //   label: 'Finn',
+        //   data: finn,
+        //   borderColor: "#d7e100",
+        //   fill: false,
+        //
+        //
+        // }
 
       ],
       labels: years
@@ -123,17 +123,114 @@ function appendChart(data) {
       },
       responsive: true,
       legend: {
-        position: 'bottom',
-        labels: {
-          fontColor: "black",
-          boxWidth: 20,
-          padding: 20
-        }
+        display: false
       }
     }
 
   });
 }
+
+
+/*let button = document.getElementsByClassName("farmer-btn");
+let i;
+
+for (i = 0; i < button.length; i++) {
+  button[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display) {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+*/
+
+/*let x = dataset();
+if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}*/
+
+
+function addDataset(name) {
+  let dataset = {};
+  let namebuttons = document.querySelectorAll(".farmer-btn");
+  for (let i = 0; i < namebuttons.lenght; i++) {
+    (function() {
+      let current = document.getElementsByClassName("clicked");
+      current[0].className = current[0].className.replace(" clicked", "");
+      this.className += " clicked";
+
+    });
+  }
+  if (name === "Lars") {
+    dataset = {
+      label: 'Lars',
+      data: lars,
+      borderColor: "#ffcc32",
+      fill: false
+    };
+  } else if (name === "Hans") {
+    dataset = {
+      label: 'Hans',
+      data: hans,
+      borderColor: "#006c3a",
+      fill: false
+    };
+  } else if (name === "Bodil") {
+    dataset = {
+      label: 'Bodil',
+      data: bodil,
+      borderColor: "#0b43aa",
+      fill: false
+    };
+  } else if (name === "Jens") {
+    dataset = {
+      label: 'Jens',
+      data: jens,
+      borderColor: "#3cc4eb",
+      fill: false
+    };
+  } else if (name === "Allan") {
+    dataset = {
+      label: 'Allan',
+      data: allan,
+      borderColor: "#7d5d8a",
+      fill: false
+    };
+  } else if (name === "Lisbeth") {
+    dataset = {
+      label: 'Lisbeth',
+      data: lisbeth,
+      borderColor: "#f8353c",
+      fill: false
+    };
+  } else if (name === "Ryan") {
+    dataset = {
+      label: 'Ryan',
+      data: ryan,
+      borderColor: "#ff7e05",
+      fill: false
+    };
+  } else if (name === "Finn") {
+    dataset = {
+      label: 'Finn',
+      data: finn,
+      borderColor: "#d7e100",
+      fill: false
+    };
+  }
+
+  myChart.data.datasets.push(dataset);
+  myChart.update();
+}
+
+
+
+
 
 /*
 let defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
