@@ -39,13 +39,18 @@ h1 {
 
 .toggleButton {
   background: white;
-  border-color: green;
-  width: 40px;
-  height: 20px;
+  border-color: #4BB131;
+  border-radius: 25px;
+  width: 140px;
+  height: 30px;
+  color: #4BB131;
+  margin: 10px;
 }
 
 .active {
-  background: green;
+  background: #4BB131;
+  border-color: #4BB131;
+  color: white;
 }
 
 .buttons-container {
