@@ -82,15 +82,6 @@ function appendChart(data) {
 
 function addDataset(name) {
   let dataset = {};
-  let namebuttons = document.querySelectorAll(".farmer-btn");
-  for (let i = 0; i < namebuttons.lenght; i++) {
-    (function() {
-      let current = document.getElementsByClassName("clicked");
-      current[0].className = current[0].className.replace(" clicked", "");
-      this.className += " clicked";
-
-    });
-  }
   if (name === "Lars") {
     dataset = {
       label: 'Lars',
@@ -166,14 +157,14 @@ function hideAllCharts() {
   }
 }
 
-// show page or tab
+// show chart or btn
 function showChart(chartId) {
   hideAllCharts();
   document.querySelector(`#${chartId}`).style.display = "block";
   setActiveButton(chartId);
 }
 
-// sets active tabbar/ menu item
+// sets active btn
 function setActiveButton(chartId) {
   let buttons = document.querySelectorAll(".toggleButton");
   for (let button of buttons) {
@@ -186,7 +177,7 @@ function setActiveButton(chartId) {
   }
 }
 
-// set default page
+// set default chart
 function setDefaultChart() {
   let chart = "chart-farmer-wrapper";
   showChart(chart);
