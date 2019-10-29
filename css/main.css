@@ -197,16 +197,3 @@ input {
   padding-left: 2%;
   border: 1px solid #707070;
 }
-
-@media screen and (max-width: 992px) {
-  body {
-    background-image: url(../img/ipad-bg.png);
-  }
-}
-
-/* On screens that are 600px wide or less, the background color is olive */
-@media screen and (max-width: 600px) {
-  body {
-    background-image: url(../img/mobile-bg.png);
-  }
-}
