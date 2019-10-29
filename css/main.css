@@ -79,7 +79,8 @@ h1 {
   width: 75%;
   position: absolute;
   right: 5%;
-  padding-top: 18%;
+  top: 30%;
+  z-index: 100;
 }
 
 .chartWrapper {
@@ -90,6 +91,10 @@ h1 {
 }
 
 #chart-farmer {
+  margin-top: 25%;
+}
+
+#chart-region {
   margin-top: 25%;
 }
 
