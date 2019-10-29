@@ -10,6 +10,7 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
   <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
@@ -21,23 +22,114 @@
     <button class="toggleButton" id="chart-region-wrapper-button" onclick="showChart('chart-region-wrapper')">Regioner</button>
   </div>
   <div class="chartWrapper" id="chart-farmer-wrapper">
-    <canvas id="chart-farmer"></canvas>
-    <div class="button-wrapper">
-      <div class="button-flex-container">
-        <button class="farmer-btn clicked" id="default-btn" type="button" name="button" onclick="addDataset('Karl')">Karl</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Ryan')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Finn')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Lars')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Lisbeth')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Hans')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Jens')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Bodil')">Tilføj</button>
-        <button class="farmer-btn" type="button" name="button" onclick="addDataset('Allan')">Tilføj</button>
-      </div>
+    <div class="h1-container">
+      <h1>Oversigt over udvikling</h1>
+      <p>Her kan du sammenligne din egen udvikling med andre landmænds. <br>
+        Grafen viser CO2-udledning pr. ko.
+        <br> <br>
+        Tryk på “Sammenlign områder” for at se hvordan din region klarer sig ift. andre regioner i Danmark.</p>
     </div>
+    <canvas id="chart-farmer"></canvas>
+
+
+    <div class="table-container">
+      <button class="farmer-btn tips-btn">Tips til forbedringer</button>
+      <p class="table-p">Nederst i tabellen kan du søge efter bestemte
+        landmænd eller sortere efter regioner.</p>
+
+      <input type="text" placeholder="Søg" name="" value="">
+      <table>
+        <tr>
+          <td class="center-td"><b>Placering</b> <img src="img/single-arrow.png" alt=""> </th>
+          <td>Navn <img src="img/single-arrow.png" alt=""></th>
+          <td> <b>Region Nord</b> <img src="img/double-arrow.png" alt=""></th>
+          <td class="btn-td">Sammenlign</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><b>Dig</b></td>
+          <td>Region Nord</td>
+          <td class="btn-td"><button class="farmer-btn clicked" id="default-btn" type="button" name="button" onclick="addDataset('Karl')">Karl</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ryan Jensen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Ryan')">Tilføj</button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Finn Holgersen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Finn')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Lars Tygesen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Lars')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Lisbeth Larsen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Lisbeth')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Hans Nielsen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Hans')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Jens Kløjgård</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Jens')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Bodil Bentsen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Bodil')">Tilføj</button>
+          </td>
+
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Allan Brodersen</td>
+          <td>Region Nord</td>
+          <td class="btn-td"> <button class="farmer-btn" type="button" name="button" onclick="addDataset('Allan')">Tilføj</button>
+          </td>
+        </tr>
+        <tr class="center-tr">
+
+          <td colspan="4"> <b> Vis 10 mere</b></td>
+
+
+
+        </tr>
+      </table>
+    </div>
+
   </div>
+
+
   <div class="chartWrapper" id="chart-region-wrapper">
     <canvas id="chart-region"></canvas>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>

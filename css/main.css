@@ -3,10 +3,19 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "Arla Interface Regular";
+  src: url("css/fonts/arlaifrg.ttf");
+  src:
+    url("css/fonts/arlaifrg.woff") format("woff"),
+    url("css/fonts/arlaifrg.otf") format("opentype"),
+    url("css/fonts/ifrg.svg#filename") format("svg");
+}
+
 html {
   color: #333;
   display: table;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Arla Interface Regular', sans-serif;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -53,18 +62,35 @@ h1 {
   color: white;
 }
 
+.h1-container {
+  width: 90%;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  font-size: 12px;
+}
+
+.h1-container>h1 {
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
 .buttons-container {
   width: 75%;
   position: absolute;
   right: 5%;
-  padding-top: 10%;
+  padding-top: 18%;
 }
 
 .chartWrapper {
   width: 65%;
   position: absolute;
   right: 10%;
-  margin-top: 15%;
+  top: 13%;
+}
+
+#chart-farmer {
+  margin-top: 25%;
 }
 
 .button-wrapper {
@@ -86,7 +112,7 @@ h1 {
   margin-right: 12%;
 }
 
-.button-flex-container>button {
+.farmer-btn {
   width: 85px;
   height: 33px;
   border-radius: 25px;
@@ -95,6 +121,22 @@ h1 {
   color: #4bb131;
   margin: 5px;
   cursor: pointer;
+}
+
+.tips-btn {
+  width: 40%;
+  height: 45px;
+}
+
+.table-p {
+  width: 50%;
+  margin: 3% auto;
+}
+
+.table-container {
+  width: 95%;
+  margin: 40px auto;
+  font-size: 12px;
 }
 
 #default-btn {
@@ -107,6 +149,53 @@ h1 {
 .compare-laptop {
   width: 90%;
   margin-top: 5%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  background-color: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.center-td {
+  padding-left: 2%;
+}
+
+.center-tr>td {
+  text-align: center;
+}
+
+.btn-td {
+  text-align: right;
+}
+
+td {
+  padding-left: 5%;
+}
+
+td>img {
+  padding-left: 5%;
+}
+
+input {
+  height: 35px;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 3%;
+  padding-left: 2%;
+  border: 1px solid #707070;
 }
 
 @media screen and (max-width: 992px) {
