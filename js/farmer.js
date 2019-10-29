@@ -52,65 +52,11 @@ function appendChart(data) {
     type: 'line',
     data: {
       datasets: [{
-          label: 'Karl',
-          data: karl,
-          borderColor: "#4bb131",
-          fill: false
-
-        }
-        // ,
-        // {
-        //   label: 'Lars',
-        //   data: lars,
-        //   borderColor: "#ffcc32",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Hans',
-        //   data: hans,
-        //   borderColor: "#006c3a",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Bodil',
-        //   data: bodil,
-        //   borderColor: "#0b43aa",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Jens',
-        //   data: jens,
-        //   borderColor: "#3cc4eb",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Allan',
-        //   data: allan,
-        //   borderColor: "#7d5d8a",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Lisbeth',
-        //   data: lisbeth,
-        //   borderColor: "#f8353c",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Ryan',
-        //   data: ryan,
-        //   borderColor: "#ff7e05",
-        //   fill: false
-        // },
-        // {
-        //   label: 'Finn',
-        //   data: finn,
-        //   borderColor: "#d7e100",
-        //   fill: false,
-        //
-        //
-        // }
-
-      ],
+        label: 'Karl',
+        data: karl,
+        borderColor: "#4bb131",
+        fill: false
+      }],
       labels: years
     },
     options: {
@@ -131,28 +77,7 @@ function appendChart(data) {
 }
 
 
-/*let button = document.getElementsByClassName("farmer-btn");
-let i;
 
-for (i = 0; i < button.length; i++) {
-  button[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    let content = this.nextElementSibling;
-    if (content.style.display) {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-*/
-
-/*let x = dataset();
-if (x.style.display === "none") {
-  x.style.display = "block";
-} else {
-  x.style.display = "none";
-}*/
 
 
 function addDataset(name) {
@@ -231,36 +156,6 @@ function addDataset(name) {
 
 
 
-
-/*
-let defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
-let newLegendClickHandler = function(e, legendItem) {
-  let index = legendItem.datasetIndex;
-
-  if (index > 0) {
-    // Do the original logic
-    defaultLegendClickHandler(e, legendItem);
-  } else {
-    let ci = this.chart;
-    [
-      ci.getDatasetMeta(0),
-      ci.getDatasetMeta(1)
-    ].forEach(function(meta) {
-      meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
-    });
-    ci.update();
-  }
-};
-
-let chart = new Chart(ctx, {
-  type: 'line',
-  data: data,
-  options: {
-    legend: {
-      onClick: newLegendClickHandler
-    }
-  }
-}); */
 
 
 // hide all charts
